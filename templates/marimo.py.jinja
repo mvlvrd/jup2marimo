@@ -1,0 +1,17 @@
+import marimo
+
+__generated_with = "original_application"
+app = marimo.App()
+
+{% for cell in cells %}
+{{ cell }}
+
+{% endfor %}{% if needsMO %}
+@app.cell
+def _():
+    import marimo as mo
+    return (mo,)
+{% endif %}
+
+if __name__ == "__main__":
+    app.run()

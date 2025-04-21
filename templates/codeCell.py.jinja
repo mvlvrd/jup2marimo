@@ -1,0 +1,6 @@
+@app.cell
+def {{ func_name }}({{ args|join(', ')|trim("{}") }}):
+    {%for line in body -%}
+    {{ line }}
+    {% endfor -%}
+    return {{ returnVals }}
